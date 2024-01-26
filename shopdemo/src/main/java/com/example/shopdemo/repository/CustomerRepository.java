@@ -37,4 +37,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("select kh from Customer kh where kh.userName = :user_name")
     Customer getByUserName(@Param("user_name") String user_name);
 
+    @Query("select kh from Customer kh where kh.userName = :user_name")
+    boolean existsByUserName(@Param("user_name") String user_name);
+
 }
